@@ -22,6 +22,15 @@
 	<div id="app3">
 		<p v-if="seen">现在你看到我了</p>
 	</div>
+
+	<!-- v-for 指令可以绑定数组的数据来渲染一个项目列表 -->
+	<div id="app4">
+		<ol>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ol>
+	</div>
 </body>
 <script type="text/javascript">
 	var app1 = new Vue({
@@ -40,6 +49,17 @@
 		el:'#app3',
 		data:{
 			seen:true
+		}
+	})
+	var app4 = new Vue({
+		el:'#app4',
+		data:{
+			todos:[
+			  {text:'学习javascript'},
+			  {text:'学习Vue'},
+			  {text:'学习jquery'}
+
+			]
 		}
 	})
 </script>
